@@ -1,0 +1,6 @@
+setuptools
+twine
+pytest
+pytest-flakes
+pytest-cov
+python-coveralls
