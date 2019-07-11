@@ -5,6 +5,14 @@
 Lightweight settings library based on Python classes. No dependency!
 
 
+### Quickstart
+
+Install quicksets lib into your python environment:
+
+```bash
+pip install quicksets
+```
+
 #### Use inherited settings classes
 Rewrite just attributes that you really need to change:
 
