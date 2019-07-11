@@ -224,7 +224,10 @@ class TestCase(unittest.TestCase):
         # os.env.get method must be called just one time
         m_os.environ.get.assert_called_once_with('SETTINGS', None)
 
-    def test_magic_methods_access_works_correctly(self):
+    @mock.patch('quicksets.loader.os')
+    def test_magic_methods_access_works_correctly(self, m_os):
+        m_os.environ.get.return_value = 'tests.settings.default'
+
         settings = Settings()
 
         self.assertEqual(settings.__class__, Settings)
