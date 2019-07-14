@@ -16,7 +16,7 @@ pip install quicksets
 #### Use inherited settings classes
 Rewrite just attributes that you really need to change:
 
-File: `myapp.settings.develop.py`
+File: `myapp/settings/develop.py`
 ```python
 class DevelopConfig:
     POSTGRESQL_HOST = 'localhost'
@@ -42,7 +42,7 @@ class DevelopConfig:
         }
 ```
 
-File: `myapp.settings.testing.py`
+File: `myapp/settings/testing.py`
 ```python
 from myapp.settings.develop import DevelopConfig
 
@@ -50,7 +50,7 @@ class TestingConfig(DevelopConfig):
     POSTGRESQL_DATABASE = 'db_test'
 ```
 
-File: `myapp.settings.product.py`
+File: `myapp/settings/product.py`
 ```
 from myapp.settings.develop import DevelopConfig
 
@@ -69,7 +69,7 @@ export SETTINGS="myapp.settings.product"
 
 #### Use quicksets with Flask
 
-File: `myapp.application.py`
+File: `myapp/application.py`
 ```python
 from flask import Flask
 from quicksets import settings
@@ -81,7 +81,7 @@ app.config.from_object(settings)
 
 #### Use quicksets with aiohttp
 
-File: `myapp.application.py`
+File: `myapp/application.py`
 ```python
 from aiohttp import web
 from quicksets import settings
