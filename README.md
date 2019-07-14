@@ -51,7 +51,7 @@ class TestingConfig(DevelopConfig):
 ```
 
 File: `myapp/settings/product.py`
-```
+```python
 from myapp.settings.develop import DevelopConfig
 
 class ProductConfig(DevelopConfig):
